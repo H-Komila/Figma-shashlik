@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Diplomata&family=DynaPuff:wght@400..700&family=Fascinate&family=Fascinate+Inline&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mea+Culpa&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Paprika&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Port+Lligat+Sans&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rosarivo:ital@0;1&family=Rubik+Beastly&family=Rubik+Dirt&family=Rubik+Gemstones&family=Rubik+Puddles&family=Schoolbell&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Diplomata&family=DynaPuff:wght@400..700&family=Fascinate&family=Fascinate+Inline&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mea+Culpa&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Paprika&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Port+Lligat+Sans&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rosarivo:ital@0;1&family=Rubik+Beastly&family=Rubik+Dirt&family=Rubik+Gemstones&family=Rubik+Puddles&family=Schoolbell&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.header{
+    background: #BB2339;
+}
+.header__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header__list{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.header__link{
+    position: relative; 
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+  line-height: 100%;
+  letter-spacing: 4%;
+  cursor: pointer;
+  overflow: hidden;
+}
+.header__link:hover{
+      background: linear-gradient(90deg, #6aff00, #a6ff00);
+      text-shadow: 0 0 8px #fff700, 0 0 16px #ff00ff;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+}
+.header__link::after {
+      content: ""; 
+  position: absolute; 
+  bottom: -3px; left: 50%;
+  width: 0; height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #8bf500, #3001ff, #8bf500);
+  transform: translateX(-50%);
+  transition: 0.3s ease;
+    }
+    .header__link:hover::after {
+      width: 100%;
+    }
+.header__btn{
+    padding: 10px 40px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #ffffff6c;
+    background: #BB2339;
+    color: #FFFFFF;
+    border-radius: 20px;
+}
+.header__btn:hover {
+    border: none;
+      background: linear-gradient(90deg, #e100ff, #00ff0d, #fb00ff);
+      background-size: 200% auto;
+      animation: mirror 1.5s ease infinite;
+    }
+    @keyframes mirror {
+      0%,100% { background-position: left; }
+      50% { background-position: right; }
+    }
+.bars {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+}
+
+
+@media (max-width: 768px) {
+  .header__list {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    flex-direction: column;
+    background: #fff;
+    width: 200px;
+    height: 100vh;
+    padding: 30px;
+    gap: 20px;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+  }
+
+  .header__list.active {
+    right: 0;
+  }
+
+  .bars {
+    display: flex;
+  }
+}
+
+
+/* ------------------------------hero------------------ */
+
+.hero{
+  background: #BB2339;
+  width: 100%;
+  height: 600px;
+}
+.hero__title{
+  font-family: Philosopher;
+font-weight: 700;
+font-size: 23px;
+color: #FFFFFF;
+line-height: 130%;
+letter-spacing: 4%;
+text-transform: capitalize;
+margin-bottom: 20px;
+}
+.hero__title1{
+  font-family: Philosopher;
+font-weight: 700;
+font-size: 90px;
+color: #FFFFFF;
+line-height: 130%;
+letter-spacing: 4%;
+text-transform: capitalize;
+margin-bottom: 20px;
+}
+.hero__title:hover {
+      background: linear-gradient(90deg, #00ff66, #0080ff);
+      text-shadow: 0 0 8px #00ff66, 0 0 16px #0080ff;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+.hero__title1:hover {
+      background: linear-gradient(90deg, #00ff66, #0080ff);
+      text-shadow: 0 0 8px #00ff66, 0 0 16px #0080ff;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .hero__text:hover {
+      background: linear-gradient(90deg, #00ff66, #0080ff);
+      text-shadow: 0 0 8px #38f200, 0 0 16px #0582ff;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+.hero__text{
+  font-family: Roboto;
+font-weight: 400;
+font-size: 16px;
+color: #FFFFFF;
+opacity: 0.6;
+line-height: 175%;
+letter-spacing: 4%;
+margin-bottom: 20px;
+}
+.hero__item1{
+  width: 555px;
+  height: 477px;
+}
+.hero__list{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hero__item:last-child {
+  position: relative;   
+  max-width: 50%;
+  overflow: hidden; 
+  border-radius: 50%;
+}
+
+.hero__item::before {
+  content: ""; 
+  position: absolute; 
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.7), transparent);
+  transform: skewX(-25deg);
+  transition: left 0.7s ease; 
+}
+
+.hero__item:hover::before { 
+  left: 125%; 
+}
+
+
+.hero__img {
+  width: 100%;
+  position: relative;
+  z-index: 1; 
+}
+.hero__images {
+  position: absolute;   
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%); 
+  width: 110%; 
+  z-index: 2;
+}
+@media (max-width: 992px) {
+  .hero__title {
+    font-size: 34px;
+  }
+  .hero__title1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__list {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .hero__item {
+    order: -1;
+  }
+
+  .hero__img {
+    width: 250px;
+  }
+
+  .hero__images {
+    width: 220px;
+    bottom: -20px;
+    right: 10px;
+  }
+
+  .hero__title {
+    font-size: 28px;
+  }
+  .hero__title1 {
+    font-size: 24px;
+  }
+  .hero__text {
+    font-size: 14px;
+  }
+  .header__btn {
+    font-size: 14px;
+    padding: 10px 22px;
+  }
+}
