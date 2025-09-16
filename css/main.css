@@ -132,6 +132,36 @@
     border-radius: 10px;
   }
 }
+@media (max-width: 480px) {
+  .header__container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .header__img {
+    width: 100px; 
+  }
+
+  .header__list {
+    width: 100%;
+    max-width: 180px;
+    right: -100%;
+    top: 60px;
+    gap: 20px;
+    padding-top: 30px;
+  }
+
+  .header__btn {
+    padding: 6px 18px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+
+  .bar {
+    width: 22px;
+    height: 2.5px;
+  }
+}
 
 
 
