@@ -133,22 +133,27 @@
   }
 }
 @media (max-width: 480px) {
-  .header__container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .header__img {
-    width: 100px; 
+  .bars {
+    display: flex;
   }
 
   .header__list {
-    width: 100%;
-    max-width: 180px;
-    right: -100%;
+    position: fixed;
     top: 60px;
-    gap: 20px;
+    right: -100%;
+    flex-direction: column;
+    background: #BB2339;
+    width: 180px;
+    height: 100vh;
+    justify-content: flex-start;
+    align-items: center;
     padding-top: 30px;
+    gap: 20px;
+    transition: right 0.3s ease;
+  }
+
+  .header__list.active {
+    right: 0;
   }
 
   .header__btn {
@@ -156,13 +161,7 @@
     font-size: 12px;
     border-radius: 8px;
   }
-
-  .bar {
-    width: 22px;
-    height: 2.5px;
-  }
 }
-
 
 
 
@@ -312,12 +311,6 @@
   height: auto;
   padding: 40px 20px;
 }
-
-.wrapper__container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .wrapper__name {
   display: flex;
   justify-content: space-between;
@@ -329,17 +322,18 @@
 .wrapper__list {
   display: grid;
   grid-template-columns: repeat(4, 1fr); 
-  gap: 30px;
+  gap: 20px;
   margin-top: 30px;
   list-style: none;
   padding: 0;
 }
 
 .item {
+  width: 250px;
   background: #ffffff;
   box-shadow: 0 0 10px 0 #bcb8b8;
   border-radius: 30px;
-  padding: 15px;
+  padding: 10px;
   text-align: center;
   transition: all 0.3s ease;
 }
@@ -516,6 +510,9 @@
   .wrapper__span i {
     font-size: 18px;
   }
+  .item {
+  width: 300px;
+}
 }
 
 
@@ -637,9 +634,19 @@
 }
 
 @media (max-width: 480px) {
-  .title { font-size: 20px; }
+  .title { font-size: 24px; }
   .text { font-size: 16px; }
-  .item { min-width: 180px; }
+  .item { width: 200px;
+          padding: 0;  }
+  .title1 {
+  font-size: 20px;
+  font-weight: 500;
+}
+.img {
+  width:200px;
+  height: 180px;
+  object-fit: cover;
+}
 }
 
 
@@ -825,6 +832,11 @@ margin-bottom: 20px;
 
 
 @media (max-width: 480px) {
+  .article{
+  background: #f8eeee;
+  width: 100%;
+  height: auto;
+}
   .article__title {
     font-size: 24px;
   
